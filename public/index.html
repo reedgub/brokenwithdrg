@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>BROKEN with Dr. G</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0B0B0B">
+<link rel="canonical" href="https://www.brokenwithdrg.com/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.brokenwithdrg.com/">
+<meta property="og:title" content="BROKEN with Dr. G">
+<meta property="og:description" content="Everybody breaks. Different sports. Same scars. A YouTube series, coming soon.">
+<meta property="og:image" content="https://www.brokenwithdrg.com/og-image_1200x630.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.brokenwithdrg.com/og-image_1200x630.png">
+<style>html,body{margin:0}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
+<meta name="description" content="Everybody breaks. Different sports. Same scars. BROKEN with Dr. G, a YouTube series. Coming soon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap">
+<style>
+/* Layout: an ink treatment room. The full lockup leads, a strip of real athletic tape to tear,
+then the chart, the reason, the question, the call to subscribe.
+Committed single look (ink + bone, one colour at a time, per the brand rules). */
+:root {
+--ink: #0B0B0B;          /* brand INK */
+--ink-2: #141311;        /* raised ink, warm-biased toward bone */
+--line: #2B2925;         /* hairlines on ink */
+--bone: #F1ECE3;         /* brand BONE */
+--bone-2: #E6DFD2;       /* bone, one shade down: chart highlights */
+--tape: #F7F5EF;         /* zinc-oxide tape white */
+--mute: #9B968C;         /* secondary text on ink */
+--mute-ink: #5E5A53;     /* secondary text on bone */
+--white: #FFFFFF;
+--display: "Archivo", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+--sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
+--step--1: clamp(0.78rem, 0.76rem + 0.1vw, 0.84rem);
+--step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+--step-1: clamp(1.25rem, 1.1rem + 0.6vw, 1.6rem);
+--step-2: clamp(1.6rem, 1.25rem + 1.6vw, 2.6rem);
+--step-3: clamp(2.4rem, 1.6rem + 3.6vw, 4.75rem);
+--step-4: clamp(3rem, 1.6rem + 6.4vw, 8rem);
+--gutter-l: max(16px, env(safe-area-inset-left, 0px));
+--gutter-r: max(16px, env(safe-area-inset-right, 0px));
+--max: 1240px;
+color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { background: var(--ink); }
+body {
+background: var(--ink);
+color: var(--bone);
+font-family: var(--sans);
+font-size: var(--step-0);
+line-height: 1.55;
+-webkit-font-smoothing: antialiased;
+overflow-x: clip;
+}
+body::after { /* film grain */
+content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 50;
+background-image: var(--grain, none); opacity: .07; mix-blend-mode: screen;
+}
+::selection { background: var(--bone); color: var(--ink); }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--bone); outline-offset: 3px; }
+.on-bone :focus-visible { outline-color: var(--ink); }
+.wrap {
+max-width: calc(var(--max) + 64px);
+margin-inline: auto;
+padding-left: var(--gutter-l);
+padding-right: var(--gutter-r);
+}
+@media (min-width: 720px) {
+.wrap { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); }
+}
+.label {
+font-family: var(--sans);
+font-weight: 600;
+font-size: var(--step--1);
+letter-spacing: .26em;
+text-transform: uppercase;
+line-height: 1.3;
+}
+.mute { color: var(--mute); }
+.display {
+font-family: var(--display);
+font-style: italic;
+font-weight: 900;
+font-stretch: 62%;
+text-transform: uppercase;
+line-height: .9;
+letter-spacing: -.005em;
+text-wrap: balance;
+margin: 0;
+}
+h2, h3 { margin: 0; text-wrap: balance; }
+p { margin: 0; max-width: 62ch; }
+/* The WITH DR. G tag, reused as the button shape */
+.tag-btn {
+--tb-bg: var(--bone); --tb-fg: var(--ink);
+display: inline-flex; align-items: center; gap: .6em;
+padding: .7em 1.4em;
+background: var(--tb-bg); color: var(--tb-fg);
+font-family: var(--display); font-style: italic; font-weight: 900; font-stretch: 75%;
+text-transform: uppercase; letter-spacing: .02em; font-size: 1.05rem; line-height: 1;
+text-decoration: none; border: 0; cursor: pointer;
+clip-path: polygon(4% 0, 100% 0, 96% 100%, 0 100%);
+transition: transform .18s ease;
+}
+.tag-btn:hover { transform: translateY(-2px); }
+/* ---------- Top bar ---------- */
+.topbar { position: relative; z-index: 5; }
+.topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 20px; }
+.topbar .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.topbar .brand svg { width: 34px; height: 34px; color: var(--bone); }
+.topbar .status { display: flex; align-items: center; gap: 10px; }
+.pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--bone); animation: pulse 2.4s ease-in-out infinite; flex: none; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .25; } }
+.topbar .tag-btn { font-size: .9rem; padding: .6em 1.1em; }
+@media (max-width: 560px) { .topbar .status .long { display: none; } }
+.social { display: flex; align-items: center; gap: 6px; }
+.topbar .status, .topbar .tag-btn { white-space: nowrap; }
+@media (max-width: 380px) { .topbar .status { display: none; } }
+.icon-link { display: grid; place-items: center; width: 40px; height: 40px; color: var(--bone); transition: opacity .18s ease, transform .18s ease; }
+.icon-link:hover { opacity: .7; transform: translateY(-1px); }
+.icon-link svg { width: 22px; height: 22px; }
+.social .tag-btn { margin-left: 6px; }
+/* ---------- Hero ---------- */
+.hero { position: relative; overflow-x: clip; padding-block: clamp(8px, 2vw, 24px) 0; }
+.lockup { display: block; width: 100%; height: auto; aspect-ratio: 1052.35 / 355.32; color: var(--bone); margin-left: -1.25%; }
+.lockup-wrap { margin: 0; animation: snap .9s cubic-bezier(.2,.9,.2,1) both; }
+@keyframes snap {
+0% { transform: translateY(18px); opacity: 0; }
+55% { transform: translateY(-3px); opacity: 1; }
+70% { transform: translate(2px, 0); }
+100% { transform: none; opacity: 1; }
+}
+.hero-row { display: grid; gap: clamp(28px, 4vw, 56px); align-items: end; margin-top: clamp(28px, 4vw, 48px); }
+@media (min-width: 900px) { .hero-row { grid-template-columns: minmax(0, 1fr) 300px; } }
+.hero-line { display: grid; gap: 16px; }
+.hero-line .display { font-size: var(--step-3); }
+.hero-line .display .ghost { color: transparent; -webkit-text-stroke: 1.5px var(--bone); }
+.chart-tag {
+border: 1px solid var(--line); background: var(--ink-2);
+padding: 18px 18px 16px; display: grid; gap: 12px;
+font-variant-numeric: tabular-nums;
+}
+.chart-tag .row { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px dashed var(--line); padding-bottom: 10px; }
+.chart-tag .k { color: var(--mute); }
+.chart-tag .v { text-align: right; font-weight: 600; }
+.chart-tag .tag-btn { justify-content: center; margin-top: 6px; }
+/* ---------- Tape ---------- */
+.tape-zone { position: relative; overflow-x: clip; height: clamp(150px, 20vw, 210px); margin-top: clamp(36px, 6vw, 72px); }
+.tape-under {
+position: absolute; inset: 0; display: grid; place-items: center; text-align: center;
+padding-left: var(--gutter-l); padding-right: var(--gutter-r);
+opacity: 0; transition: opacity .5s ease .3s;
+}
+.tape-zone.torn .tape-under { opacity: 1; }
+.tape-under .display { font-size: var(--step-3); }
+.tape-under button { margin-top: 14px; background: none; border: 0; color: var(--mute); cursor: pointer; text-decoration: underline; text-underline-offset: 4px; font: inherit; font-size: var(--step--1); letter-spacing: .2em; text-transform: uppercase; font-weight: 600; }
+.tape {
+position: absolute; left: -4%; top: 50%; width: 108%;
+height: 62px; margin-top: -31px;
+background: none; border: 0; padding: 0; cursor: pointer; display: block;
+transform: rotate(-2deg);
+filter: drop-shadow(0 1px 1px rgba(0,0,0,.45)) drop-shadow(0 10px 14px rgba(0,0,0,.55));
+animation: tape-in .9s cubic-bezier(.2,.8,.2,1) .3s backwards;
+transition: transform .25s ease;
+}
+.tape:hover { transform: rotate(-2deg) translateY(-2px); }
+.tape:focus-visible { outline: none; }
+.tape:focus-visible .tape-face { box-shadow: inset 0 0 0 2px var(--ink); }
+@keyframes tape-in { from { transform: translateX(24%) rotate(-2deg); opacity: 0; } to { transform: rotate(-2deg); opacity: 1; } }
+.tape-half { position: absolute; inset: 0; transition: transform .95s cubic-bezier(.3,.7,.2,1), opacity .8s ease .25s; }
+.tape-half.l { transform-origin: 0 50%; }
+.tape-half.r { transform-origin: 100% 50%; visibility: hidden; }
+.tape-zone.split .tape-half.r { visibility: visible; }
+.tape-zone.torn .tape-half.l { transform: translate(-5%, 64px) rotate(-5deg); opacity: 0; }
+.tape-zone.torn .tape-half.r { transform: translate(5%, 84px) rotate(4deg); opacity: 0; }
+.tape-zone.torn .tape { pointer-events: none; }
+.tape-face { position: absolute; inset: 0; overflow: hidden; background-color: var(--tape); }
+/* The strip rolls left to right; its texture repeats every 1200px so the loop is seamless */
+.tape-strip {
+position: absolute; top: 0; bottom: 0; left: 0; width: calc(100% + 1200px);
+transform: translateX(-1200px);
+background-image:
+linear-gradient(180deg, rgba(11,11,11,.10), rgba(11,11,11,0) 16%, rgba(255,255,255,.5) 30%, rgba(255,255,255,0) 52%, rgba(11,11,11,0) 80%, rgba(11,11,11,.12)),
+var(--tex, none),
+repeating-linear-gradient(90deg, rgba(11,11,11,.04) 0 1px, transparent 1px 2.4px),
+repeating-linear-gradient(0deg, rgba(11,11,11,.035) 0 1px, transparent 1px 2.6px);
+background-size: 100% 100%, 1200px 100%, auto, auto;
+background-repeat: no-repeat, repeat-x, repeat, repeat;
+animation: tape-roll 55s linear infinite;
+}
+@keyframes tape-roll { to { transform: translateX(0); } }
+.tape-zone.split .tape-strip { animation-play-state: paused; }
+.tape-ink { position: absolute; inset: 0; color: rgba(11,11,11,.86); mix-blend-mode: multiply; }
+.tape-ink span {
+position: absolute; top: 50%; margin-top: -15px; white-space: nowrap;
+font-family: var(--display); font-style: italic; font-weight: 900; font-stretch: 62%;
+text-transform: uppercase; font-size: 30px; line-height: 1; letter-spacing: .01em;
+transform: rotate(-1.2deg) translateY(1px);
+}
+.tape-ink span:nth-child(even) { transform: rotate(.8deg) translateY(-1px); }
+/* ---------- Sections ---------- */
+section { position: relative; }
+.band { padding-block: clamp(72px, 11vw, 150px); }
+.sec-head { display: grid; gap: 18px; }
+.sec-head .label { display: flex; align-items: center; gap: 12px; }
+.sec-head .label::before { content: ""; width: 28px; height: 2px; background: currentColor; }
+.on-bone { background: var(--bone); color: var(--ink); }
+.on-bone .mute { color: var(--mute-ink); }
+/* Intake */
+.intake-grid { display: grid; gap: clamp(36px, 5vw, 72px); }
+@media (min-width: 980px) { .intake-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: center; } }
+.intake-copy { display: grid; gap: 22px; align-content: start; }
+.intake-copy .display { font-size: var(--step-3); }
+.intake-copy .quote { font-size: var(--step-1); line-height: 1.35; font-weight: 500; max-width: 26ch; }
+.charts { display: grid; gap: 20px; }
+@media (min-width: 640px) { .charts { grid-template-columns: 1fr 1fr; } }
+.chart {
+background: var(--white); color: var(--ink);
+border: 1px solid rgba(11,11,11,.14);
+padding: 20px 20px 18px; display: grid; gap: 16px; align-content: start;
+box-shadow: 0 1px 0 rgba(11,11,11,.05), 0 18px 40px -24px rgba(11,11,11,.35);
+font-variant-numeric: tabular-nums;
+}
+.chart:nth-child(1) { transform: rotate(-.6deg); }
+.chart:nth-child(2) { transform: rotate(.8deg); }
+.chart header { display: flex; justify-content: space-between; align-items: center; gap: 12px; border-bottom: 2px solid var(--ink); padding-bottom: 10px; }
+.chart header svg { width: 22px; height: 22px; }
+.fields { display: grid; grid-template-columns: auto 1fr; gap: 8px 14px; align-items: center; }
+.fields .k { color: var(--mute-ink); }
+.redact { height: 14px; background: var(--ink); display: block; }
+.redact.w1 { width: 82%; } .redact.w2 { width: 56%; }
+.hx { border-top: 1px solid rgba(11,11,11,.14); padding-top: 12px; display: grid; gap: 4px; }
+.hx ul { margin: 6px 0 0; padding: 0; display: grid; gap: 2px; list-style: none; }
+.hx .line {
+font-family: var(--display); font-style: italic; font-weight: 900; font-stretch: 62%;
+text-transform: uppercase; font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.6rem); line-height: 1;
+background-image: linear-gradient(var(--bone-2), var(--bone-2));
+background-repeat: no-repeat; background-position: 0 85%; background-size: 0% 38%;
+transition: background-size .5s cubic-bezier(.3,.7,.2,1);
+}
+.charts.read .hx .line { background-size: 100% 38%; }
+.chart footer { display: flex; justify-content: space-between; gap: 12px; border-top: 1px dashed rgba(11,11,11,.25); padding-top: 10px; color: var(--mute-ink); }
+/* Why this exists */
+.why .lead { font-size: var(--step-4); margin-top: clamp(24px, 3vw, 36px); }
+.why .body {
+margin-top: clamp(28px, 4vw, 48px); max-width: 30ch;
+font-size: var(--step-2); line-height: 1.18; font-weight: 500; letter-spacing: -.01em; font-stretch: 88%;
+color: var(--mute); text-wrap: pretty;
+}
+.why .body strong { color: var(--bone); font-weight: 800; font-style: italic; }
+@media (min-width: 1000px) { .why .body { margin-left: auto; max-width: 28ch; } }
+/* Disciplines marquee */
+.marquee { border-block: 1px solid var(--line); overflow: hidden; padding-block: 18px; }
+.marquee .run { display: flex; gap: 40px; width: max-content; animation: run 46s linear infinite; }
+@keyframes run { to { transform: translateX(-50%); } }
+.marquee span { font-family: var(--display); font-style: italic; font-weight: 900; font-stretch: 62%; text-transform: uppercase; font-size: clamp(2rem, 1.4rem + 2.4vw, 3.6rem); line-height: 1; white-space: nowrap; }
+.marquee span.o { color: transparent; -webkit-text-stroke: 1.2px var(--mute); }
+/* The question */
+.closer { background: #000; padding-block: clamp(80px, 12vw, 170px); }
+.closer-grid { display: grid; gap: clamp(32px, 4vw, 56px); }
+.closer-lead { display: grid; gap: 10px; max-width: 40ch; }
+.closer-lead p { font-size: var(--step-1); line-height: 1.35; color: var(--mute); }
+.closer-lead p.strong { color: var(--bone); font-weight: 600; }
+.closer-icon { width: 44px; height: 44px; color: var(--bone); margin-bottom: 10px; }
+.closer .display { font-size: clamp(3.2rem, 1.2rem + 9vw, 11rem); line-height: .86; max-width: 12ch; }
+.closer-foot { display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: center; padding-top: 22px; border-top: 1px solid var(--line); }
+.closer-foot .label:first-child::before { content: ""; display: inline-block; width: 28px; height: 2px; background: currentColor; vertical-align: middle; margin-right: 12px; }
+/* Final CTA */
+.final { padding-block: clamp(88px, 12vw, 160px) clamp(40px, 6vw, 64px); }
+.final-grid { display: grid; }
+.final .display { font-size: var(--step-4); }
+.final .ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+.sponsors {
+margin-top: clamp(56px, 8vw, 96px); padding-block: clamp(24px, 3vw, 36px);
+border-block: 1px solid var(--line);
+display: grid; gap: 14px;
+}
+@media (min-width: 900px) { .sponsors { grid-template-columns: 220px minmax(0, 1fr); align-items: baseline; } }
+.sponsor-body { display: grid; gap: 20px; min-width: 0; }
+.sponsors p { font-family: var(--display); font-style: italic; font-weight: 900; font-stretch: 75%; text-transform: uppercase; font-size: var(--step-2); line-height: 1; max-width: none; text-wrap: balance; }
+.sponsor-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; }
+.sponsor-actions .handle { color: var(--mute); }
+.sponsor-actions .handle a { color: var(--bone); font-weight: 600; text-underline-offset: 3px; }
+.foot { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: center; color: var(--mute); }
+.foot svg { width: 140px; height: auto; aspect-ratio: 1052.35 / 355.32; color: var(--bone); display: block; }
+@media (prefers-reduced-motion: reduce) {
+*, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="lockup" viewBox="0 0 1052.35 355.32"><path transform="translate(13.16 13.16) scale(1)" d="M523.81 117.01 508.67 117.77Q508.13 121.22 507.5 124.8Q500.24 166.38 487.37 191.96Q474.5 217.53 455.03 229.24Q435.56 240.96 408.5 240.96Q385.4 240.96 370.22 232.71Q355.04 224.46 347.45 208.46Q339.86 192.45 339.86 168.69Q339.86 158.46 341.02 146.91Q342 137.06 343.82 126.01L359 125.25Q359.67 120.81 360.48 116.16Q367.74 74.58 380.61 49.01Q393.48 23.43 412.95 11.72Q432.42 0.0 459.15 0.0Q482.25 0.0 497.6 8.25Q512.94 16.5 520.53 32.67Q528.12 48.84 528.12 72.6Q528.12 82.83 526.97 94.21Q525.89 104.83 523.81 117.01ZM172.38 134.58 153.26 135.54Q160.38 144.59 160.38 161.76Q160.38 184.2 149.66 201.2Q138.93 218.19 121.44 227.6Q103.95 237.0 83.82 237.0H0.0L16.5 142.38L31.59 141.62L55.6 3.96H137.11Q153.61 3.96 165.82 9.08Q178.03 14.19 184.63 24.42Q191.23 34.65 191.23 49.83Q191.23 66.66 184.96 79.04Q178.69 91.41 168.79 99.66Q158.89 107.91 147.67 112.53L147.34 113.85Q159.88 119.13 168.13 128.21Q170.64 130.96 172.38 134.58ZM335.71 126.42 323.49 127.03Q317.52 136.43 308.86 143.61L316.78 237.0H253.42V160.77H235.93L222.4 237.0H162.34L180.27 134.19L195.36 133.44L217.94 3.96H297.47Q319.25 3.96 332.12 10.72Q344.99 17.49 350.43 29.2Q355.88 40.92 355.88 56.43Q355.88 70.29 352.91 85.63Q349.94 100.98 343.17 114.51Q339.98 120.91 335.71 126.42ZM949.53 95.73 952.97 95.55Q953.96 89.67 955.24 82.67Q957.39 70.95 958.71 62.37L968.94 3.96H1026.03L1010.43 92.68L995.35 93.44L970.1 237.0H913.01L905.42 168.36Q904.76 161.1 903.61 151.86Q902.45 142.62 901.46 135.36H899.81Q899.15 141.96 897.67 151.69Q896.18 161.43 894.53 169.35L882.65 237.0H825.89L849.66 100.72L864.74 99.97L881.49 3.96H938.25L946.5 72.27Q947.16 76.56 947.82 81.67Q948.48 86.79 949.14 92.23Q949.35 93.99 949.53 95.73ZM661.25 110.14 645.66 110.92 644.76 112.59 661.92 237.0H600.87L593.94 160.77L580.08 173.64L569.19 237.0H509.13L530.11 116.7L545.2 115.94L564.73 3.96H625.12L609.28 94.05L653.83 3.96H716.2L660.76 106.59ZM832.22 101.59 817.15 102.35 809.08 147.9H751.0L744.73 184.86H816.34L807.1 237.0H675.43L697.88 108.31L712.96 107.56L731.03 3.96H861.38L852.14 56.1H782.18L776.24 89.76H834.32ZM612.95 261.0H975.35L961.35 329.0H598.95ZM461.71 120.12Q462.99 112.89 463.93 107.25Q466.08 94.38 467.24 87.12Q468.39 79.86 468.72 76.23Q469.05 72.6 469.05 70.29Q469.05 64.35 467.57 60.23Q466.08 56.1 462.78 53.96Q459.48 51.81 453.54 51.81Q446.94 51.81 442.32 54.78Q437.7 57.75 434.57 63.36Q431.43 68.97 429.45 76.56Q427.47 84.15 425.82 93.72Q422.94 110.48 420.89 122.16L405.81 122.91Q404.75 128.96 403.88 133.88Q401.57 146.91 400.42 154.17Q399.26 161.43 398.93 164.89Q398.6 168.36 398.6 171.0Q398.6 176.61 400.09 180.73Q401.57 184.86 405.04 187Q408.5 189.15 414.11 189.15Q420.71 189.15 425.33 186.18Q429.95 183.21 432.92 177.76Q435.89 172.32 438.04 164.57Q440.18 156.81 441.83 147.24Q444.71 131.87 446.63 120.87ZM260.18 106.92H274.7Q280.97 106.92 285.26 100.49Q289.55 94.05 291.69 84.81Q293.84 75.57 293.84 66.99Q293.84 61.05 291.69 57.26Q289.55 53.46 284.27 53.46H269.75ZM647.7 312.0H659.31L664.82 294.88Q665.04 294.23 665.34 293.26Q665.63 292.29 665.96 291.24Q666.28 290.18 666.55 289.27H666.93Q666.87 290.08 666.82 291.1Q666.77 292.13 666.71 293.13Q666.66 294.13 666.66 294.88L666.23 312.0H678L691.39 274.85H680.97L676 291.43Q675.78 292.13 675.51 293.1Q675.24 294.07 674.97 295.1Q674.7 296.12 674.43 297.04H674.06Q674.11 296.12 674.16 295.07Q674.22 294.02 674.3 293.05Q674.38 292.07 674.38 291.43L675.08 274.85H663.96L658.67 291.43Q658.45 292.02 658.18 292.96Q657.91 293.91 657.59 294.99Q657.26 296.07 656.99 297.04H656.61Q656.67 296.07 656.75 294.99Q656.83 293.91 656.91 292.96Q656.99 292.02 656.99 291.43L658.07 274.85H647ZM67.98 184.2H83.82Q87.45 184.2 91.41 181.56Q95.37 178.92 98.01 173.15Q100.65 167.37 100.65 158.46Q100.65 152.85 98.01 149.06Q95.37 145.26 90.75 145.26H74.91ZM794.82 312.0H808.91Q813.99 312.0 817.34 310.03Q820.69 308.06 822.74 304.04Q824.79 300.01 825.87 293.86Q826.25 291.75 826.44 289.91Q826.63 288.08 826.63 286.51Q826.63 280.52 823.66 277.68Q820.69 274.85 814.31 274.85H801.35ZM99.16 92.4H113.02Q115.99 92.4 118.96 90.91Q121.93 89.43 124.41 86.29Q126.88 83.16 128.37 78.38Q129.85 73.59 129.85 66.99Q129.85 61.38 127.21 57.58Q124.57 53.79 119.95 53.79H106.09ZM831.27 312.0H841.86L844.07 299.53H848.01L849.2 312.0H860.54L858.06 296.99Q860.16 295.58 861.51 293.53Q862.86 291.48 863.54 288.94Q864.21 286.4 864.21 283.76Q864.21 281.17 863.22 279.17Q862.22 277.17 860 276.01Q857.79 274.85 854.12 274.85H837.81ZM746 312.0H756.53L759.06 297.58H765.92L763.38 312.0H773.97L780.56 274.85H769.97L767.49 288.78H760.63L763.11 274.85H752.53ZM910.67 312.65Q913.04 312.65 914.88 312.11Q916.71 311.57 918.2 310.62Q919.68 309.68 920.82 308.49L921.03 312.0H926.43L930.11 291.26H914.82L913.47 298.82H918.77L918.71 299.04Q918.5 300.39 917.77 301.52Q917.04 302.66 915.93 303.33Q914.82 304.01 913.31 304.01Q911.85 304.01 910.94 303.55Q910.02 303.09 909.59 302.23Q909.15 301.36 909.15 300.01Q909.15 299.69 909.21 299.17Q909.26 298.66 909.42 297.69Q909.59 296.72 909.86 294.94Q910.13 293.15 910.67 290.29Q910.99 288.46 911.48 287.05Q911.96 285.65 912.72 284.7Q913.47 283.76 914.53 283.3Q915.58 282.84 916.98 282.84Q917.9 282.84 918.58 283.06Q919.25 283.27 919.74 283.7Q920.22 284.14 920.44 284.76Q920.66 285.38 920.66 286.13Q920.66 286.62 920.6 287.16Q920.55 287.7 920.44 288.29H930.59Q930.75 287.27 930.86 286.35Q930.97 285.43 930.97 284.62Q930.97 282.03 930.05 280.06Q929.13 278.09 927.43 276.79Q925.73 275.5 923.3 274.85Q920.87 274.2 917.79 274.2Q913.2 274.2 909.61 275.96Q906.02 277.71 903.57 281.46Q901.11 285.22 899.76 291.26Q899.27 293.37 899 295.48Q898.73 297.58 898.73 299.63Q898.73 306.17 901.81 309.41Q904.89 312.65 910.67 312.65ZM718.83 312.0H729.41L734.44 283.7H743.18L744.75 274.85H716.51L714.94 283.7H723.85ZM691.66 312.0H702.19L708.78 274.85H698.2ZM806.92 303.36 810.37 283.49H812.75Q813.94 283.49 814.64 283.92Q815.34 284.35 815.66 285.11Q815.99 285.86 815.99 287Q815.99 287.54 815.88 288.38Q815.77 289.21 815.48 291.05Q815.18 292.88 814.53 296.39Q814.21 298.12 813.8 299.45Q813.4 300.77 812.8 301.63Q812.21 302.5 811.34 302.93Q810.48 303.36 809.24 303.36ZM867.46 312.0H876.42L878.15 301.96H869.24ZM845.42 291.53 846.93 283.06H851.36Q852.33 283.06 852.82 283.76Q853.31 284.46 853.31 285.59Q853.31 287 852.85 288.38Q852.39 289.75 851.55 290.64Q850.71 291.53 849.69 291.53Z" fill="currentColor"/></symbol>
+<symbol id="b-icon" viewBox="0 0 1000 1000"><path transform="translate(171.76 100) scale(3.43)" d="M172.38 130.62 153.26 131.58Q160.38 140.63 160.38 157.8Q160.38 180.24 149.66 197.24Q138.93 214.23 121.44 223.64Q103.95 233.04 83.82 233.04H0.0L16.5 138.42L31.59 137.66L55.6 0.0H137.11Q153.61 0.0 165.82 5.12Q178.03 10.23 184.63 20.46Q191.23 30.69 191.23 45.87Q191.23 62.7 184.96 75.08Q178.69 87.45 168.79 95.7Q158.89 103.95 147.67 108.57L147.34 109.89Q159.88 115.17 168.13 124.25Q170.64 127 172.38 130.62ZM67.98 180.24H83.82Q87.45 180.24 91.41 177.6Q95.37 174.96 98.01 169.19Q100.65 163.41 100.65 154.5Q100.65 148.89 98.01 145.1Q95.37 141.3 90.75 141.3H74.91ZM99.16 88.44H113.02Q115.99 88.44 118.96 86.95Q121.93 85.47 124.41 82.33Q126.88 79.2 128.37 74.42Q129.85 69.63 129.85 63.03Q129.85 57.42 127.21 53.62Q124.57 49.83 119.95 49.83H106.09Z" fill="currentColor"/></symbol>
+</svg>
+<header class="topbar">
+<div class="wrap">
+<a class="brand" href="#top" aria-label="BROKEN with Dr. G, home">
+<svg aria-hidden="true"><use href="#b-icon"></use></svg>
+<span class="status label"><i class="pulse" aria-hidden="true"></i><span>Season one</span><span class="long mute">· In treatment</span></span>
+</a>
+<div class="social">
+<a class="icon-link" id="yt-icon" href="#subscribe" aria-label="BROKEN with Dr. G on YouTube" hidden>
+<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+</a>
+<a class="icon-link" href="https://www.instagram.com/brokenwithdrg/" target="_blank" rel="noopener" aria-label="@brokenwithdrg on Instagram">
+<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
+</a>
+<a class="tag-btn" href="#subscribe">Get notified</a>
+</div>
+</div>
+</header>
+<main id="top">
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-title">
+<div class="wrap">
+<h1 id="hero-title" class="lockup-wrap">
+<svg class="lockup" role="img" aria-label="BROKEN with Dr. G"><use href="#lockup"></use></svg>
+</h1>
+<div class="hero-row">
+<div class="hero-line">
+<span class="label mute">A YouTube series</span>
+<h2 class="display">Different sports.<br><span class="ghost">Same scars.</span></h2>
+</div>
+<aside class="chart-tag" aria-label="Series status">
+<div class="row label"><span class="k">Status</span><span class="v">In treatment</span></div>
+<div class="row label"><span class="k">Premiere</span><span class="v" id="premiere">Coming soon</span></div>
+<div class="row label"><span class="k">Runtime</span><span class="v">60–75 min</span></div>
+<a class="tag-btn" id="yt-top" href="#subscribe">Subscribe on YouTube</a>
+</aside>
+</div>
+</div>
+<div class="tape-zone" id="tape-zone">
+<div class="tape-under" aria-live="polite">
+<div>
+<p class="display">Everybody breaks.</p>
+<button type="button" id="retape">Tape it back up</button>
+</div>
+</div>
+<button class="tape" id="tape" type="button" aria-label="Tear the tape (plays a sound)">
+<span class="tape-half l" aria-hidden="true"><span class="tape-face"><span class="tape-strip"><span class="tape-ink" data-ink></span></span></span></span>
+<span class="tape-half r" aria-hidden="true"><span class="tape-face"><span class="tape-strip"><span class="tape-ink" data-ink></span></span></span></span>
+</button>
+</div>
+</section>
+<!-- THE INTAKE -->
+<section class="band on-bone" aria-labelledby="intake-title">
+<div class="wrap intake-grid">
+<div class="intake-copy">
+<div class="sec-head">
+<span class="label">The Intake</span>
+<h2 id="intake-title" class="display">Before the story, the chart.</h2>
+</div>
+<p class="quote">Everyone who sits down here has a history. You'll hear it first.</p>
+</div>
+<div class="charts" id="charts">
+<article class="chart" aria-label="Example intake chart A">
+<header><span class="label">Intake · Chart A</span><svg aria-hidden="true"><use href="#b-icon"></use></svg></header>
+<div class="fields label">
+<span class="k">Name</span><span class="redact w1" aria-label="withheld"></span>
+<span class="k">Sport</span><span class="redact w2" aria-label="withheld"></span>
+</div>
+<div class="hx">
+<span class="label mute">History</span>
+<ul>
+<li class="line">Two femurs.</li>
+<li class="line">Collapsed lung.</li>
+<li class="line">C5–C6 fusion.</li>
+<li class="line">Left wrist twice.</li>
+</ul>
+</div>
+<footer class="label"><span>Read by Dr. G</span><span>Example</span></footer>
+</article>
+<article class="chart" aria-label="Example intake chart B">
+<header><span class="label">Intake · Chart B</span><svg aria-hidden="true"><use href="#b-icon"></use></svg></header>
+<div class="fields label">
+<span class="k">Name</span><span class="redact w2" aria-label="withheld"></span>
+<span class="k">Sport</span><span class="redact w1" aria-label="withheld"></span>
+</div>
+<div class="hx">
+<span class="label mute">History</span>
+<ul>
+<li class="line">Nine surgeries.</li>
+<li class="line">Two ACLs.</li>
+<li class="line">Concussion count —</li>
+<li class="line">unknown.</li>
+</ul>
+</div>
+<footer class="label"><span>Read by Dr. G</span><span>Example</span></footer>
+</article>
+</div>
+</div>
+</section>
+<!-- WHY THIS EXISTS -->
+<section class="band why" aria-labelledby="why-title">
+<div class="wrap">
+<div class="sec-head"><span class="label mute">Why this exists</span></div>
+<h2 id="why-title" class="display lead">Action sports are tribal.</h2>
+<p class="body">Every sport has its own media, its own contests, its own celebrity economy, and almost zero crossover conversation in public. There is one place where the walls come down: <strong>Dr. G's table.</strong></p>
+</div>
+</section>
+<div class="marquee" aria-hidden="true"><div class="run" id="marquee"></div></div>
+<!-- THE QUESTION -->
+<section class="closer" aria-labelledby="closer-title">
+<div class="wrap closer-grid">
+<div class="closer-lead">
+<svg class="closer-icon" aria-hidden="true"><use href="#b-icon"></use></svg>
+<p>Different sports. Different injuries. Different ways back.</p>
+<p class="strong">Every guest at the table gets asked the same thing.</p>
+</div>
+<h2 id="closer-title" class="display">How have you overcome being broken?</h2>
+<div class="closer-foot">
+<span class="label">Dr. G</span>
+<span class="label mute">Their answers, coming soon to YouTube</span>
+</div>
+</div>
+</section>
+<!-- FINAL CTA -->
+<section class="final" id="subscribe" aria-labelledby="final-title">
+<div class="wrap">
+<div class="final-grid">
+<div>
+<span class="label mute">Season one</span>
+<h2 id="final-title" class="display" style="margin-top:16px">Coming soon to YouTube.</h2>
+<div class="ctas">
+<a class="tag-btn" id="yt" href="#" target="_blank" rel="noopener">Subscribe on YouTube</a>
+</div>
+</div>
+</div>
+<div class="sponsors">
+<span class="label mute">Sponsorship</span>
+<div class="sponsor-body">
+<p>Reach out to be a sponsor of the series.</p>
+<div class="sponsor-actions">
+<a class="tag-btn" href="https://ig.me/m/brokenwithdrg" target="_blank" rel="noopener">DM us on Instagram</a>
+<span class="handle">DM <a href="https://www.instagram.com/brokenwithdrg/" target="_blank" rel="noopener">@brokenwithdrg</a> on Instagram</span>
+</div>
+</div>
+</div>
+<div class="foot label">
+<svg role="img" aria-label="BROKEN with Dr. G"><use href="#lockup"></use></svg>
+<span>Everybody breaks</span>
+</div>
+</div>
+</section>
+</main>
+<script>
+(() => {
+// ---- Launch settings: fill these in when they exist ----
+const CHANNEL_URL = "";     // e.g. "https://www.youtube.com/@yourchannel"
+const PREMIERE = "";        // e.g. "2027-01-15T17:00:00Z" turns on the countdown
+const $ = (s, r = document) => r.querySelector(s);
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+// Channel links
+if (CHANNEL_URL) {
+[$("#yt"), $("#yt-top"), $("#yt-icon")].forEach(a => { a.href = CHANNEL_URL; a.target = "_blank"; a.rel = "noopener"; });
+$("#yt-icon").hidden = false;
+} else {
+const yt = $("#yt");
+yt.removeAttribute("target"); yt.href = "#subscribe"; yt.textContent = "Channel opens soon";
+}
+// Premiere countdown (only if a date is set)
+if (PREMIERE) {
+const t = Date.parse(PREMIERE), el = $("#premiere");
+const tick = () => {
+const s = Math.max(0, Math.floor((t - Date.now()) / 1000));
+const d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60);
+el.textContent = s ? `${d}d ${String(h).padStart(2,"0")}h ${String(m).padStart(2,"0")}m` : "Out now";
+};
+tick(); setInterval(tick, 30000);
+}
+// Film grain
+try {
+const c = document.createElement("canvas"); c.width = c.height = 160;
+const g = c.getContext("2d"), img = g.createImageData(160, 160);
+for (let i = 0; i < img.data.length; i += 4) { const v = Math.random() * 255; img.data[i] = img.data[i+1] = img.data[i+2] = v; img.data[i+3] = 255; }
+g.putImageData(img, 0, 0);
+document.body.style.setProperty("--grain", `url(${c.toDataURL()})`);
+} catch (e) {}
+// ---------- Athletic tape ----------
+const zone = $("#tape-zone"), tape = $("#tape");
+const halves = { l: tape.querySelector(".tape-half.l"), r: tape.querySelector(".tape-half.r") };
+const rnd = (a, b) => a + Math.random() * (b - a);
+// Tape texture: cotton fibres along the length and soft crinkles across it,
+// drawn once on a 1200px tile that wraps so the rolling strip loops cleanly
+try {
+const TW = 1200, TH = 64, S = 2;
+const c = document.createElement("canvas"); c.width = TW * S; c.height = TH * S;
+const g = c.getContext("2d"); g.scale(S, S);
+const wrapped = draw => { draw(0); draw(-TW); draw(TW); };
+for (let i = 0; i < 1400; i++) {
+const x = rnd(0, TW), y = rnd(0, TH), len = rnd(12, 150), dark = Math.random() < .7;
+g.strokeStyle = dark ? `rgba(11,11,11,${rnd(.018, .06).toFixed(3)})` : `rgba(255,255,255,${rnd(.15, .4).toFixed(3)})`;
+g.lineWidth = rnd(.35, 1);
+const tilt = rnd(-.6, .6);
+wrapped(o => { g.beginPath(); g.moveTo(x + o, y); g.lineTo(x + o + len, y + tilt); g.stroke(); });
+}
+for (let x = rnd(10, 40); x < TW; x += rnd(36, 120)) {
+const w = rnd(4, 18), skew = rnd(-5, 5), light = Math.random() < .5;
+const col = light ? `rgba(255,255,255,${rnd(.25, .55).toFixed(2)})` : `rgba(11,11,11,${rnd(.03, .08).toFixed(3)})`;
+wrapped(o => {
+const gr = g.createLinearGradient(x + o - w, 0, x + o + w, 0);
+gr.addColorStop(0, "rgba(0,0,0,0)"); gr.addColorStop(.5, col); gr.addColorStop(1, "rgba(0,0,0,0)");
+g.fillStyle = gr;
+g.beginPath(); g.moveTo(x + o - w, 0); g.lineTo(x + o + w, 0); g.lineTo(x + o + w + skew, TH); g.lineTo(x + o - w + skew, TH); g.closePath(); g.fill();
+});
+}
+const url = `url(${c.toDataURL()})`;
+tape.querySelectorAll(".tape-strip").forEach(s => s.style.setProperty("--tex", url));
+} catch (e) {}
+// Marker writing on the tape, every 400px (a third of the tile, so it loops too)
+const inkHTML = Array.from({ length: 12 }, (_, k) => `<span style="left:${k * 400 + 40}px">Everybody breaks</span>`).join("");
+tape.querySelectorAll("[data-ink]").forEach(el => el.innerHTML = inkHTML);
+// Slightly fuzzy selvedge edges, and a jagged tear wherever it's tapped
+let edges = null;
+function buildEdges() {
+const W = tape.offsetWidth, H = tape.offsetHeight;
+const top = [], bot = [];
+for (let x = 0; x <= W; x += 5) { top.push([x, rnd(0, 1.1)]); bot.push([x, H - rnd(0, 1.1)]); }
+edges = { W, H, top, bot };
+halves.l.style.clipPath = poly([...top, [W, 0], [W, H], ...bot.slice().reverse()]);
+}
+const poly = pts => `polygon(${pts.map(([x, y]) => `${x.toFixed(1)}px ${y.toFixed(1)}px`).join(",")})`;
+function tearAt(tx) {
+const { W, H, top, bot } = edges;
+const tear = [];
+for (let y = 0; y <= H; y += rnd(2, 4.5)) {
+const fibre = Math.random() < .18 ? rnd(-14, 14) : rnd(-6, 6);
+tear.push([tx + fibre + (y / H) * rnd(-10, 10), y]);
+}
+tear.push([tx + rnd(-6, 6), H]);
+const lTop = top.filter(p => p[0] < tear[0][0]), lBot = bot.filter(p => p[0] < tear[tear.length - 1][0]);
+const rTop = top.filter(p => p[0] > tear[0][0]), rBot = bot.filter(p => p[0] > tear[tear.length - 1][0]);
+halves.l.style.clipPath = poly([...lTop, ...tear, ...lBot.slice().reverse()]);
+halves.r.style.clipPath = poly([...rTop, [W, 0], [W, H], ...rBot.slice().reverse(), ...tear.slice().reverse()]);
+}
+buildEdges();
+let rw; addEventListener("resize", () => { clearTimeout(rw); rw = setTimeout(() => { if (!zone.classList.contains("split")) buildEdges(); }, 150); });
+// Tape tear sound: synthesized, starts only from a tap
+let actx;
+function tearSound() {
+try {
+actx = actx || new (window.AudioContext || window.webkitAudioContext)();
+if (actx.state === "suspended") actx.resume();
+const sr = actx.sampleRate, dur = 0.62, n = Math.floor(sr * dur);
+const buf = actx.createBuffer(1, n, sr), d = buf.getChannelData(0);
+let hold = 0, holdLeft = 0;
+for (let i = 0; i < n; i++) {
+const t = i / n;
+if (holdLeft-- <= 0) { hold = Math.random() < 0.3 ? 1 : 0.15 + Math.random() * 0.35; holdLeft = Math.floor(sr * (0.0015 + Math.random() * 0.006)); }
+const env = Math.min(1, t / 0.03) * (t < 0.7 ? 0.75 + 0.25 * Math.sin(t * 9) : Math.max(0, 1 - (t - 0.7) / 0.3));
+d[i] = (Math.random() * 2 - 1) * hold * env;
+}
+const src = actx.createBufferSource(); src.buffer = buf;
+src.playbackRate.setValueAtTime(0.85, actx.currentTime);
+src.playbackRate.linearRampToValueAtTime(1.2, actx.currentTime + dur);
+const hp = actx.createBiquadFilter(); hp.type = "highpass"; hp.frequency.value = 700;
+const pk = actx.createBiquadFilter(); pk.type = "peaking"; pk.frequency.value = 2600; pk.gain.value = 7; pk.Q.value = 0.9;
+const gain = actx.createGain(); gain.gain.value = 0.55;
+src.connect(hp).connect(pk).connect(gain).connect(actx.destination);
+src.start();
+} catch (e) {}
+}
+tape.addEventListener("click", e => {
+const rect = tape.getBoundingClientRect();
+const tx = e.detail && e.clientX ? Math.min(Math.max(e.clientX - rect.left, edges.W * .15), edges.W * .85) : edges.W / 2;
+tearAt(tx);
+tearSound();
+zone.classList.add("split");
+requestAnimationFrame(() => requestAnimationFrame(() => zone.classList.add("torn")));
+setTimeout(() => $("#retape").focus({ preventScroll: true }), 700);
+});
+$("#retape").addEventListener("click", () => {
+zone.classList.remove("torn", "split");
+buildEdges();
+tape.focus({ preventScroll: true });
+});
+// Intake charts: highlight each line when the charts come into view
+const charts = $("#charts");
+charts.querySelectorAll(".line").forEach((l, i) => l.style.transitionDelay = `${(i % 4) * 0.28 + (i >= 4 ? 0.14 : 0)}s`);
+if ("IntersectionObserver" in window && !reduced) {
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { charts.classList.add("read"); io.disconnect(); } }), { threshold: 0.4 });
+io.observe(charts);
+} else charts.classList.add("read");
+// Disciplines marquee
+const sports = ["Moto", "Skate", "Surf", "Big wave", "Snow", "Freeride", "MMA", "BMX"];
+const mq = sports.map((s, i) => `<span class="${i % 2 ? "o" : ""}">${s}</span>`).join("");
+$("#marquee").innerHTML = mq + mq + mq + mq;
+})();
+</script>
+</body>
+</html>
