@@ -11,7 +11,7 @@ Static landing page for the YouTube series, live at https://www.brokenwithdrg.co
 
 ## Rules
 
-- Follow the brand rules in README.md: ink `#0B0B0B` and bone `#F1ECE3`, one colour at a time (red is reserved for the recording light and the YouTube logo); Archivo only; logos from `src/brand/` used unmodified.
+- Follow the brand rules in README.md: ink `#0B0B0B` and bone `#F1ECE3`, one colour at a time (red is reserved for the recording light and the YouTube logo); Archivo only (Permanent Marker is used solely for the scrawl on the tape); logos from `src/brand/` used unmodified.
 - Reuse the CSS tokens on `:root` and existing classes (`.display`, `.label`, `.tag-btn`) instead of new one-off styles.
 - Keep motion behind `prefers-reduced-motion`.
 - Don't invent guests, injuries, dates or partners. The intake charts are labelled as examples.

@@ -98,7 +98,7 @@ python3 src/build.py && python3 -m http.server 8000 --directory public
 The page follows the BROKEN with Dr. G brand kit. For anything new:
 
 - **Colour:** Ink `#0B0B0B` and Bone `#F1ECE3`, one at a time: bone on ink, or ink on bone. The only red is the blinking recording light (`--rec`) and the official YouTube logo.
-- **Type:** Archivo from Google Fonts. Display is italic, width 62, weight 900, uppercase. Labels are width 100, weight 600, in letter-spaced caps.
+- **Type:** Archivo from Google Fonts. Display is italic, width 62, weight 900, uppercase. Labels are width 100, weight 600, in letter-spaced caps. The handwriting on the tape uses Permanent Marker, and only there.
 - **Logo:** use the files in `src/brand/` as they are. Never recolour the tag separately, stretch, rotate, outline or rebuild the break. Clear space is the height of the tag on every side.
 - **Buttons** reuse the slanted "WITH DR. G" tag shape (`.tag-btn`).
 - **Voice:** short, plain and deadpan.
