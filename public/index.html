@@ -308,13 +308,13 @@ display: grid; gap: 14px;
 <span class="status label"><i class="pulse" aria-hidden="true"></i><span>Season one</span><span class="long mute">· In treatment</span></span>
 </a>
 <div class="social">
-<a class="icon-link" id="yt-icon" href="#subscribe" aria-label="BROKEN with Dr. G on YouTube" hidden>
+<a class="icon-link" id="yt-icon" data-track="YouTube (header icon)" href="#subscribe" aria-label="BROKEN with Dr. G on YouTube" hidden>
 <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
 </a>
-<a class="icon-link" href="https://www.instagram.com/brokenwithdrg/" target="_blank" rel="noopener" aria-label="@brokenwithdrg on Instagram">
+<a class="icon-link" data-track="Instagram (header)" href="https://www.instagram.com/brokenwithdrg/" target="_blank" rel="noopener" aria-label="@brokenwithdrg on Instagram">
 <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
 </a>
-<a class="tag-btn" href="#subscribe">Get notified</a>
+<a class="tag-btn" data-track="Get notified (header)" href="#subscribe">Get notified</a>
 </div>
 </div>
 </header>
@@ -334,7 +334,7 @@ display: grid; gap: 14px;
 <div class="row label"><span class="k">Status</span><span class="v">In treatment</span></div>
 <div class="row label"><span class="k">Premiere</span><span class="v" id="premiere">Coming soon</span></div>
 <div class="row label"><span class="k">Runtime</span><span class="v">60–75 min</span></div>
-<a class="tag-btn" id="yt-top" href="#subscribe">Subscribe on YouTube</a>
+<a class="tag-btn" id="yt-top" data-track="Subscribe on YouTube (hero)" href="#subscribe">Subscribe on YouTube</a>
 </aside>
 </div>
 </div>
@@ -431,7 +431,7 @@ display: grid; gap: 14px;
 <span class="label mute">Season one</span>
 <h2 id="final-title" class="display" style="margin-top:16px">Coming soon to YouTube.</h2>
 <div class="ctas">
-<a class="tag-btn" id="yt" href="#" target="_blank" rel="noopener">Subscribe on YouTube</a>
+<a class="tag-btn" id="yt" data-track="Subscribe on YouTube (bottom)" href="#" target="_blank" rel="noopener">Subscribe on YouTube</a>
 </div>
 </div>
 </div>
@@ -440,8 +440,8 @@ display: grid; gap: 14px;
 <div class="sponsor-body">
 <p>Reach out to be a sponsor of the series.</p>
 <div class="sponsor-actions">
-<a class="tag-btn" href="https://ig.me/m/brokenwithdrg" target="_blank" rel="noopener">DM us on Instagram</a>
-<span class="handle">DM <a href="https://www.instagram.com/brokenwithdrg/" target="_blank" rel="noopener">@brokenwithdrg</a> on Instagram</span>
+<a class="tag-btn" data-track="Sponsor DM" href="https://ig.me/m/brokenwithdrg" target="_blank" rel="noopener">DM us on Instagram</a>
+<span class="handle">DM <a data-track="Sponsor Instagram handle" href="https://www.instagram.com/brokenwithdrg/" target="_blank" rel="noopener">@brokenwithdrg</a> on Instagram</span>
 </div>
 </div>
 </div>
@@ -458,6 +458,14 @@ display: grid; gap: 14px;
 const CHANNEL_URL = "";     // e.g. "https://www.youtube.com/@yourchannel"
 const PREMIERE = "";        // e.g. "2027-01-15T17:00:00Z" turns on the countdown
 const $ = (s, r = document) => r.querySelector(s);
+// Vercel Web Analytics: page views, plus a named event for each tracked click
+window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+if (location.protocol.startsWith("http")) {
+const va = document.createElement("script"); va.defer = true; va.src = "/_vercel/insights/script.js";
+document.head.appendChild(va);
+}
+const track = (name, data) => { try { window.va("event", { name, data }); } catch (e) {} };
+document.addEventListener("click", e => { const a = e.target.closest("[data-track]"); if (a) track(a.dataset.track); });
 const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 // Channel links
 if (CHANNEL_URL) {
@@ -586,6 +594,7 @@ tape.addEventListener("click", e => {
 const rect = tape.getBoundingClientRect();
 const tx = e.detail && e.clientX ? Math.min(Math.max(e.clientX - rect.left, edges.W * .15), edges.W * .85) : edges.W / 2;
 tearAt(tx);
+track("Tape torn");
 tearSound();
 zone.classList.add("split");
 requestAnimationFrame(() => requestAnimationFrame(() => zone.classList.add("torn")));

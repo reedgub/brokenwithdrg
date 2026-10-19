@@ -47,7 +47,7 @@ A single dark landing page built from the brand kit: ink and bone, Archivo, the 
 | **The question** | "How have you overcome being broken?" Asked of every guest. |
 | **Subscribe + sponsors** | The YouTube call to action, and a direct line for sponsors by Instagram DM. |
 
-It's hand-written HTML, CSS and a little vanilla JavaScript: no framework, no build dependencies, no tracking. Motion respects `prefers-reduced-motion`, and the layout is checked at 390px and 1440px.
+It's hand-written HTML, CSS and a little vanilla JavaScript: no framework and no build dependencies. Analytics is Vercel Web Analytics (cookieless); any element with a `data-track="Name"` attribute is logged as a click event, and tearing the tape logs `Tape torn`. Motion respects `prefers-reduced-motion`, and the layout is checked at 390px and 1440px.
 
 ## Editing
 
