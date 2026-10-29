@@ -118,6 +118,10 @@ p { margin: 0; max-width: 62ch; }
 .social { display: flex; align-items: center; gap: 6px; }
 .topbar .status, .topbar .tag-btn { white-space: nowrap; }
 @media (max-width: 380px) { .topbar .status { display: none; } }
+.nav-link { color: var(--bone); text-decoration: none; padding: 10px 8px; transition: opacity .18s ease; }
+.nav-link:hover { opacity: .7; }
+@media (max-width: 480px) { .nav-link { display: none; } }
+.deck-link { color: var(--bone); font-weight: 600; text-underline-offset: 3px; }
 .icon-link { display: grid; place-items: center; width: 40px; height: 40px; color: var(--bone); transition: opacity .18s ease, transform .18s ease; }
 .icon-link:hover { opacity: .7; transform: translateY(-1px); }
 .icon-link svg { width: 22px; height: 22px; }
@@ -309,6 +313,7 @@ section { position: relative; }
       <span class="status label"><i class="pulse" aria-hidden="true"></i><span>Season one</span><span class="long mute">· In treatment</span></span>
     </a>
     <div class="social">
+      <a class="nav-link label" data-track="Sponsors (header)" href="/sponsors">Sponsors</a>
       <a class="icon-link" id="yt-icon" data-track="YouTube (header icon)" href="#subscribe" aria-label="BROKEN with Dr. G on YouTube" hidden>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
       </a>
@@ -450,6 +455,7 @@ section { position: relative; }
           <div class="sponsor-actions">
             <a class="tag-btn" data-track="Sponsor DM" href="https://ig.me/m/brokenwithdrg" target="_blank" rel="noopener">DM us on Instagram</a>
             <span class="handle">DM <a data-track="Sponsor Instagram handle" href="https://www.instagram.com/brokenwithdrg/" target="_blank" rel="noopener">@brokenwithdrg</a> on Instagram</span>
+            <a class="handle deck-link" data-track="Sponsor deck" href="/sponsors">Sponsor deck <span class="mute">(password)</span> →</a>
           </div>
         </div>
       </div>
