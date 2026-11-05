@@ -12,7 +12,7 @@
 <p align="center">
   The coming-soon site for <em>UNBROKEN with Dr. G</em>, a YouTube series.<br>
   <a href="https://www.brokenwithdrg.com"><strong>www.brokenwithdrg.com</strong></a> ·
-  <a href="https://www.instagram.com/brokenwithdrg/">@brokenwithdrg</a>
+  <a href="https://www.instagram.com/unbrokenwithdrg/">@unbrokenwithdrg</a>
 </p>
 
 <p align="center">

@@ -73,7 +73,7 @@ a{color:var(--bone)}
 <button type="submit" id="go">Open the deck</button>
 </form>
 <noscript><p class="msg">This page needs JavaScript to unlock.</p></noscript>
-<p class="label">No password? <a href="https://ig.me/m/brokenwithdrg">DM @brokenwithdrg</a></p>
+<p class="label">No password? <a href="https://ig.me/m/unbrokenwithdrg">DM @unbrokenwithdrg</a></p>
 </main>
 <script>
 (function () {
