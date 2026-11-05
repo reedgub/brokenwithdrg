@@ -40,7 +40,7 @@ def head_extra(url, title, desc, private=False):
 
 def build(template, out, extra, source=None):
     h = source if source is not None else open(os.path.join(SRC, template)).read()
-    h = h.replace('<!--LOCKUP-->', path('BROKEN_Primary_Lockup_Bone.svg')).replace('<!--ICON-->', path('BROKEN_Icon_Bone.svg'))
+    h = h.replace('<!--LOCKUP-->', path('UNBROKEN_Primary_Lockup_Bone.svg')).replace('<!--ICON-->', path('UNBROKEN_Icon_Bone.svg'))
     title_end = h.index('</title>') + len('</title>')
     body_start = h.index('<svg width="0"')
     doc = ('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n' + h[:title_end] + extra +
@@ -72,7 +72,7 @@ def build_sponsors():
     print('built public/sponsors.html (encrypted)')
 
 os.makedirs(OUT, exist_ok=True)
-build('template.html', 'index.html', head_extra('https://www.brokenwithdrg.com/', 'BROKEN with Dr. G',
+build('template.html', 'index.html', head_extra('https://www.brokenwithdrg.com/', 'UNBROKEN with Dr. G',
       'Everybody breaks. Different sports. Same scars. A YouTube series, coming soon.'))
 build_sponsors()
 for f in ['favicon.ico', 'favicon-32x32.png', 'apple-touch-icon.png', 'og-image_1200x630.png']:

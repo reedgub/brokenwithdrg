@@ -1,4 +1,4 @@
-# BROKEN with Dr. G — coming-soon site
+# UNBROKEN with Dr. G — coming-soon site
 
 Static landing page for the YouTube series, live at https://www.brokenwithdrg.com. Vercel deploys every push to `main` to production, so a push is a release.
 

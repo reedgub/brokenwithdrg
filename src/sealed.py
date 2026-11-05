@@ -39,7 +39,7 @@ def gate_page(blob):
 
 GATE = r'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
-<title>Sponsors · BROKEN with Dr. G</title>
+<title>Sponsors · UNBROKEN with Dr. G</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#0B0B0B">

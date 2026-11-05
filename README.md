@@ -2,7 +2,7 @@
   <a href="https://www.brokenwithdrg.com">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="docs/logo-bone.svg">
-      <img src="docs/logo-ink.svg" alt="BROKEN with Dr. G" width="440">
+      <img src="docs/logo-ink.svg" alt="UNBROKEN with Dr. G" width="440">
     </picture>
   </a>
 </p>
@@ -10,7 +10,7 @@
 <p align="center"><strong>Everybody breaks. Different sports. Same scars.</strong></p>
 
 <p align="center">
-  The coming-soon site for <em>BROKEN with Dr. G</em>, a YouTube series.<br>
+  The coming-soon site for <em>UNBROKEN with Dr. G</em>, a YouTube series.<br>
   <a href="https://www.brokenwithdrg.com"><strong>www.brokenwithdrg.com</strong></a> ·
   <a href="https://www.instagram.com/brokenwithdrg/">@brokenwithdrg</a>
 </p>
@@ -24,7 +24,7 @@
 ---
 
 <p align="center">
-  <img src="docs/preview-desktop.png" alt="Desktop view of the BROKEN with Dr. G landing page" width="760">
+  <img src="docs/preview-desktop.png" alt="Desktop view of the UNBROKEN with Dr. G landing page" width="760">
 </p>
 
 <table>
@@ -95,7 +95,7 @@ python3 src/build.py && python3 -m http.server 8000 --directory public
 
 ## Brand rules
 
-The page follows the BROKEN with Dr. G brand kit. For anything new:
+The page follows the UNBROKEN with Dr. G brand kit. For anything new:
 
 - **Colour:** Ink `#0B0B0B` and Bone `#F1ECE3`, one at a time: bone on ink, or ink on bone. The only red is the blinking recording light (`--rec`) and the official YouTube logo.
 - **Type:** Archivo from Google Fonts. Display is italic, width 62, weight 900, uppercase. Labels are width 100, weight 600, in letter-spaced caps. The handwriting on the tape uses Permanent Marker, and only there.
@@ -122,4 +122,4 @@ The page follows the BROKEN with Dr. G brand kit. For anything new:
 
 ---
 
-<p align="center"><sub>© 2026 BROKEN with Dr. G. All rights reserved. The name, logo and brand assets are not licensed for reuse.</sub></p>
+<p align="center"><sub>© 2026 UNBROKEN with Dr. G. All rights reserved. The name, logo and brand assets are not licensed for reuse.</sub></p>
