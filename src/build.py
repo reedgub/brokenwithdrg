@@ -31,9 +31,9 @@ def head_extra(url, title, desc, private=False):
             '<meta property="og:url" content="%s">' % url,
             '<meta property="og:title" content="%s">' % title,
             '<meta property="og:description" content="%s">' % desc,
-            '<meta property="og:image" content="https://www.brokenwithdrg.com/og-image_1200x630.png">',
+            '<meta property="og:image" content="https://www.unbrokenwithdrg.com/og-image_1200x630.png">',
             '<meta name="twitter:card" content="summary_large_image">',
-            '<meta name="twitter:image" content="https://www.brokenwithdrg.com/og-image_1200x630.png">',
+            '<meta name="twitter:image" content="https://www.unbrokenwithdrg.com/og-image_1200x630.png">',
         ]
     meta.append('<style>html,body{margin:0}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>')
     return '\n' + '\n'.join(meta) + '\n'
@@ -67,12 +67,12 @@ def build_sponsors():
         print('sealed src/sponsors.html.enc')
     else:
         source = unseal(json.load(open(sealed_src)), password)
-    doc = build('sponsors.html', None, head_extra('https://www.brokenwithdrg.com/sponsors', '', '', private=True), source)
+    doc = build('sponsors.html', None, head_extra('https://www.unbrokenwithdrg.com/sponsors', '', '', private=True), source)
     open(os.path.join(OUT, 'sponsors.html'), 'w').write(gate_page(seal(doc, password)))
     print('built public/sponsors.html (encrypted)')
 
 os.makedirs(OUT, exist_ok=True)
-build('template.html', 'index.html', head_extra('https://www.brokenwithdrg.com/', 'UNBROKEN with Dr. G',
+build('template.html', 'index.html', head_extra('https://www.unbrokenwithdrg.com/', 'UNBROKEN with Dr. G',
       'Everybody breaks. Different sports. Same scars. A YouTube series, coming soon.'))
 build_sponsors()
 for f in ['favicon.ico', 'favicon-32x32.png', 'apple-touch-icon.png', 'og-image_1200x630.png']:

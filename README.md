@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://www.brokenwithdrg.com">
+  <a href="https://www.unbrokenwithdrg.com">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="docs/logo-bone.svg">
       <img src="docs/logo-ink.svg" alt="UNBROKEN with Dr. G" width="440">
@@ -11,7 +11,7 @@
 
 <p align="center">
   The coming-soon site for <em>UNBROKEN with Dr. G</em>, a YouTube series.<br>
-  <a href="https://www.brokenwithdrg.com"><strong>www.brokenwithdrg.com</strong></a> ·
+  <a href="https://www.unbrokenwithdrg.com"><strong>www.unbrokenwithdrg.com</strong></a> ·
   <a href="https://www.instagram.com/unbrokenwithdrg/">@unbrokenwithdrg</a>
 </p>
 
@@ -108,13 +108,13 @@ The page follows the UNBROKEN with Dr. G brand kit. For anything new:
 | | |
 |---|---|
 | **Host** | Vercel project `brokenwithdrg`. Every push to `main` deploys to production. |
-| **Domain** | `www.brokenwithdrg.com` is primary; `brokenwithdrg.com` redirects to it. |
+| **Domain** | `www.unbrokenwithdrg.com` is primary. `unbrokenwithdrg.com`, `brokenwithdrg.com` and `www.brokenwithdrg.com` all 308-redirect to it, keeping the path (set in Vercel → Domains). |
 | **DNS** | Namecheap BasicDNS: an `A` record for `@` and a `CNAME` for `www`, both pointing to Vercel. |
 | **Rollback** | Vercel → Deployments → pick the last good deploy → Promote to Production. |
 
 ## Launch checklist
 
-- [x] Live on www.brokenwithdrg.com with HTTPS
+- [ ] Live on www.unbrokenwithdrg.com with HTTPS (old brokenwithdrg.com redirects)
 - [x] Share card and favicons
 - [x] Instagram link and sponsor DM
 - [ ] YouTube channel URL (`CHANNEL_URL`)
