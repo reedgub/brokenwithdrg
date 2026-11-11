@@ -1,4 +1,4 @@
-"""Builds public/index.html from src/template.html, and the encrypted public/sponsors.html (see src/sealed.py).
+"""Builds public/index.html from src/template.html, and the encrypted public/partners.html (see src/sealed.py).
 
 Run from the repo root: python3 src/build.py
 Inlines the logo paths (one colour, currentColor) and wraps the page in a full document.
@@ -53,28 +53,28 @@ def build(template, out, extra, source=None):
     return doc
 
 
-def build_sponsors():
-    """The sponsor deck is private and the repo is public: see src/sealed.py."""
+def build_partners():
+    """The partner deck is private and the repo is public: see src/sealed.py."""
     from sealed import seal, unseal, gate_page
     # The gate trims and lowercases what people type, so the key is derived the same way.
-    password = (os.environ.get('SPONSOR_PASSWORD') or '').strip().lower()
-    plain, sealed_src = os.path.join(SRC, 'sponsors.html'), os.path.join(SRC, 'sponsors.html.enc')
+    password = (os.environ.get('PARTNER_PASSWORD') or '').strip().lower()
+    plain, sealed_src = os.path.join(SRC, 'partners.html'), os.path.join(SRC, 'partners.html.enc')
     if not password:
-        print('skipped public/sponsors.html (set SPONSOR_PASSWORD to build the private sponsor page)')
+        print('skipped public/partners.html (set PARTNER_PASSWORD to build the private partner page)')
         return
     if os.path.exists(plain):
         source = open(plain).read()
         open(sealed_src, 'w').write(json.dumps(seal(source, password)) + '\n')
-        print('sealed src/sponsors.html.enc')
+        print('sealed src/partners.html.enc')
     else:
         source = unseal(json.load(open(sealed_src)), password)
-    doc = build('sponsors.html', None, head_extra('https://www.brokenwithdrg.com/sponsors', '', '', private=True), source)
-    open(os.path.join(OUT, 'sponsors.html'), 'w').write(gate_page(seal(doc, password)))
-    print('built public/sponsors.html (encrypted)')
+    doc = build('partners.html', None, head_extra('https://www.brokenwithdrg.com/partners', '', '', private=True), source)
+    open(os.path.join(OUT, 'partners.html'), 'w').write(gate_page(seal(doc, password)))
+    print('built public/partners.html (encrypted)')
 
 os.makedirs(OUT, exist_ok=True)
 build('template.html', 'index.html', head_extra('https://www.brokenwithdrg.com/', 'UNBROKEN with Dr. G',
       'Everybody breaks. Different sports. Same scars. A YouTube series, coming soon.'))
-build_sponsors()
+build_partners()
 for f in ['favicon.ico', 'favicon-32x32.png', 'apple-touch-icon.png', 'og-image_1200x630.png']:
     shutil.copy(os.path.join(SRC, 'brand', f), OUT)

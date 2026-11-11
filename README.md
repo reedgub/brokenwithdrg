@@ -45,7 +45,7 @@ A single dark landing page built from the brand kit: ink and bone, Archivo, the 
 | **The Intake** | Two example intake charts with names and sports redacted. The history lines highlight as they scroll into view. |
 | **Why this exists** | "Action sports are tribal." The case for one table, many sports. |
 | **The question** | "How have you overcome being broken?" Asked of every guest. |
-| **Subscribe + sponsors** | The YouTube call to action, and a direct line for sponsors by Instagram DM. |
+| **Subscribe + partners** | The YouTube call to action, and a direct line for partners by Instagram DM. |
 
 It's hand-written HTML, CSS and a little vanilla JavaScript: no framework and no build dependencies. Analytics is Vercel Web Analytics (cookieless); any element with a `data-track="Name"` attribute is logged as a click event, and tearing the tape logs `Tape torn`. Motion respects `prefers-reduced-motion`, and the layout is checked at 390px and 1440px.
 
@@ -116,7 +116,7 @@ The page follows the UNBROKEN with Dr. G brand kit. For anything new:
 
 - [x] Live on www.brokenwithdrg.com with HTTPS
 - [x] Share card and favicons
-- [x] Instagram link and sponsor DM
+- [x] Instagram link and partner DM
 - [ ] YouTube channel URL (`CHANNEL_URL`)
 - [ ] Premiere date (`PREMIERE`) for the countdown
 

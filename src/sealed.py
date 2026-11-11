@@ -1,12 +1,12 @@
-"""Encryption for the private sponsor page.
+"""Encryption for the private partner page.
 
-The repo is public, so the sponsor deck is never committed in plain text:
-  src/sponsors.html       plain-text source (gitignored, lives only on your machine)
-  src/sponsors.html.enc   the same source, encrypted (committed)
-  public/sponsors.html    a password page that decrypts the deck in the browser (committed)
+The repo is public, so the partner deck is never committed in plain text:
+  src/partners.html       plain-text source (gitignored, lives only on your machine)
+  src/partners.html.enc   the same source, encrypted (committed)
+  public/partners.html    a password page that decrypts the deck in the browser (committed)
 
 Everything is AES-256-GCM with a key derived from the password by PBKDF2-SHA256,
-which the browser's Web Crypto can undo. Set SPONSOR_PASSWORD before building.
+which the browser's Web Crypto can undo. Set PARTNER_PASSWORD before building.
 """
 import base64, json, os
 from cryptography.hazmat.primitives import hashes
@@ -39,7 +39,7 @@ def gate_page(blob):
 
 GATE = r'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
-<title>Sponsors · UNBROKEN with Dr. G</title>
+<title>Partners · UNBROKEN with Dr. G</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#0B0B0B">
@@ -63,9 +63,9 @@ button[disabled]{opacity:.6;cursor:progress}
 a{color:var(--bone)}
 </style></head>
 <body><main>
-<p class="label">Sponsors · Private</p>
+<p class="label">Partners · Private</p>
 <h1>Different sports.<br>Same scars.</h1>
-<p>The Season One sponsor deck. Enter the password you were given.</p>
+<p>The Season One partner deck. Enter the password you were given.</p>
 <form id="f">
 <label class="label" for="pw">Password</label>
 <input id="pw" name="password" type="password" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" required autofocus>
@@ -77,7 +77,7 @@ a{color:var(--bone)}
 </main>
 <script>
 (function () {
-  var BLOB = /*BLOB*/null, KEY = 'bwdg-sponsor-pw';
+  var BLOB = /*BLOB*/null, KEY = 'bwdg-partner-pw';
   var bytes = function (s) { return Uint8Array.from(atob(s), function (c) { return c.charCodeAt(0); }); };
   function unlock(pw) {
     var enc = new TextEncoder();

@@ -1,4 +1,4 @@
 .vercel
 .DS_Store
 __pycache__/
-src/sponsors.html
+src/partners.html
