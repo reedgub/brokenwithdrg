@@ -68,7 +68,7 @@ a{color:var(--bone)}
 <p>The Season One sponsor deck. Enter the password you were given.</p>
 <form id="f">
 <label class="label" for="pw">Password</label>
-<input id="pw" name="password" type="password" autocomplete="current-password" required autofocus>
+<input id="pw" name="password" type="password" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" required autofocus>
 <p class="msg" id="msg" role="alert"></p>
 <button type="submit" id="go">Open the deck</button>
 </form>
@@ -97,7 +97,7 @@ a{color:var(--bone)}
       msg = document.getElementById('msg'), go = document.getElementById('go');
   f.addEventListener('submit', function (e) {
     e.preventDefault();
-    var pw = input.value; go.disabled = true; msg.textContent = 'Opening…';
+    var pw = input.value.trim().toLowerCase(); go.disabled = true; msg.textContent = 'Opening…';
     unlock(pw).then(function (html) { show(html, pw); })
       .catch(function () { go.disabled = false; msg.textContent = 'That’s not it. Try again.'; input.select(); });
   });

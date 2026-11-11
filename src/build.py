@@ -56,7 +56,8 @@ def build(template, out, extra, source=None):
 def build_sponsors():
     """The sponsor deck is private and the repo is public: see src/sealed.py."""
     from sealed import seal, unseal, gate_page
-    password = os.environ.get('SPONSOR_PASSWORD')
+    # The gate trims and lowercases what people type, so the key is derived the same way.
+    password = (os.environ.get('SPONSOR_PASSWORD') or '').strip().lower()
     plain, sealed_src = os.path.join(SRC, 'sponsors.html'), os.path.join(SRC, 'sponsors.html.enc')
     if not password:
         print('skipped public/sponsors.html (set SPONSOR_PASSWORD to build the private sponsor page)')

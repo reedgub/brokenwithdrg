@@ -22,5 +22,6 @@ Static landing page for the YouTube series, live at https://www.brokenwithdrg.co
 - The repo is public, so the sponsor deck is never committed in plain text. `src/sponsors.html` (the editable source) is gitignored; the committed copies are `src/sponsors.html.enc` and the encrypted `public/sponsors.html`, which asks for the password and decrypts in the browser.
 - To edit or rebuild it you need the password: `SPONSOR_PASSWORD=… python3 src/build.py`. Without `src/sponsors.html` on disk, the build decrypts the source from `src/sponsors.html.enc` (the build doesn't write the source back to disk). Without the variable, the build skips the sponsor page and leaves `public/sponsors.html` as it is.
 - Changing the password: build once with the new `SPONSOR_PASSWORD` while `src/sponsors.html` exists, and commit both encrypted files.
+- The gate trims and lowercases what people type (phones capitalise the first letter), and the build does the same to `SPONSOR_PASSWORD`, so passwords are effectively case-insensitive.
 - Never commit `src/sponsors.html` or put the password in the repo.
 - The sponsor page is the one exception to the red rule: it uses the deck's accent red (`--red`, `--red-hi`) for eyebrows, numbers, prices and the Founding Partners band, to match the sponsor deck. Logos stay unmodified.
